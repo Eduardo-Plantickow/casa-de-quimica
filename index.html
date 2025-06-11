@@ -112,7 +112,7 @@
             
             <div class="chemical-process relative">
                 <!-- Etapa 1: Coagulação -->
-                <div class="process-step" style="top: 20px; left: 10%;">
+                <div class="process-step" style="top: 20px; left: 10%; transition: 0.5s; opacity: 1;">
                     <div class="flip-card h-40 w-full">
                         <div class="flip-card-inner">
                             <div class="flip-card-front bg-blue-50 p-4 flex flex-col items-center justify-center rounded-lg border border-blue-200 shadow">
@@ -128,7 +128,7 @@
                 </div>
                 
                 <!-- Etapa 2: Floculação -->
-                <div class="process-step" style="top: 20px; left: 30%;">
+                <div class="process-step" style="top: 20px; left: 30%; transition: 0.5s; opacity: 1;">
                     <div class="flip-card h-40 w-full">
                         <div class="flip-card-inner">
                             <div class="flip-card-front bg-blue-50 p-4 flex flex-col items-center justify-center rounded-lg border border-blue-200 shadow">
@@ -144,7 +144,7 @@
                 </div>
                 
                 <!-- Etapa 3: Decantação -->
-                <div class="process-step" style="top: 20px; left: 50%;">
+                <div class="process-step" style="top: 20px; left: 50%; transition: 0.5s; opacity: 1;">
                     <div class="flip-card h-40 w-full">
                         <div class="flip-card-inner">
                             <div class="flip-card-front bg-blue-50 p-4 flex flex-col items-center justify-center rounded-lg border border-blue-200 shadow">
@@ -160,7 +160,7 @@
                 </div>
                 
                 <!-- Etapa 4: Filtração -->
-                <div class="process-step" style="top: 20px; left: 70%;">
+                <div class="process-step" style="top: 20px; left: 70%; transition: 0.5s; opacity: 1;">
                     <div class="flip-card h-40 w-full">
                         <div class="flip-card-inner">
                             <div class="flip-card-front bg-blue-50 p-4 flex flex-col items-center justify-center rounded-lg border border-blue-200 shadow">
@@ -176,7 +176,7 @@
                 </div>
                 
                 <!-- Etapa 5: Desinfecção -->
-                <div class="process-step" style="top: 220px; left: 40%;">
+                <div class="process-step" style="top: 220px; left: 40%; transition: 0.5s; opacity: 1;">
                     <div class="flip-card h-40 w-full">
                         <div class="flip-card-inner">
                             <div class="flip-card-front bg-blue-50 p-4 flex flex-col items-center justify-center rounded-lg border border-blue-200 shadow">
@@ -192,7 +192,7 @@
                 </div>
                 
                 <!-- Etapa 6: Fluoretação -->
-                <div class="process-step" style="top: 220px; left: 70%;">
+                <div class="process-step" style="top: 220px; left: 70%; transition: 0.5s; opacity: 1;">
                     <div class="flip-card h-40 w-full">
                         <div class="flip-card-inner">
                             <div class="flip-card-front bg-blue-50 p-4 flex flex-col items-center justify-center rounded-lg border border-blue-200 shadow">
@@ -209,11 +209,11 @@
                 
                 <!-- Linhas de conexão -->
                 <svg width="100%" height="100%" class="absolute top-0 left-0 z-0" style="pointer-events: none;">
-                    <line x1="15%" y1="100" x2="25%" y2="100" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5" />
-                    <line x1="35%" y1="100" x2="45%" y2="100" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5" />
-                    <line x1="55%" y1="100" x2="65%" y2="100" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5" />
-                    <line x1="40%" y1="150" x2="40%" y2="220" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5" />
-                    <line x1="70%" y1="150" x2="70%" y2="220" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5" />
+                    <line x1="15%" y1="100" x2="25%" y2="100" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5"></line>
+                    <line x1="35%" y1="100" x2="45%" y2="100" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5"></line>
+                    <line x1="55%" y1="100" x2="65%" y2="100" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5"></line>
+                    <line x1="40%" y1="150" x2="40%" y2="220" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5"></line>
+                    <line x1="70%" y1="150" x2="70%" y2="220" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5"></line>
                 </svg>
             </div>
             
@@ -588,11 +588,11 @@
                     <form onsubmit="event.preventDefault(); submitForm();" id="contactForm">
                         <div class="mb-4">
                             <label for="name" class="block text-sm font-medium mb-1">Nome *</label>
-                            <input type="text" id="name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="text" id="name" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
                         <div class="mb-4">
                             <label for="email" class="block text-sm font-medium mb-1">E-mail *</label>
-                            <input type="email" id="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="email" id="email" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
                         <div class="mb-4">
                             <label for="subject" class="block text-sm font-medium mb-1">Assunto</label>
@@ -605,7 +605,7 @@
                         </div>
                         <div class="mb-4">
                             <label for="message" class="block text-sm font-medium mb-1">Mensagem *</label>
-                            <textarea id="message" rows="4" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            <textarea id="message" rows="4" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                         </div>
                         <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300 font-medium">
                             <i class="fas fa-paper-plane mr-2"></i> Enviar Mensagem
@@ -699,5 +699,6 @@
             });
         });
     </script>
-<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Eduuuuuplan/casa-de-qu-mica" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+
+</body>
 </html>
