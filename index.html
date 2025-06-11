@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa de Química - ETA | IFES Campus Vitória</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .chemical-process {
+            position: relative;
+            height: 400px;
+            margin: 2rem 0;
+        }
+        .process-step {
+            position: absolute;
+            width: 120px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .process-step:hover {
+            transform: scale(1.1);
+            z-index: 10;
+        }
+        .chemical-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #3B82F6;
+        }
+        .flip-card {
+            perspective: 1000px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 0.5rem;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        .delay-1 {
+            animation-delay: 0.5s;
+        }
+        .delay-2 {
+            animation-delay: 1s;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-blue-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <i class="fas fa-flask text-3xl"></i>
+                    <div>
+                        <h1 class="text-xl md:text-2xl font-bold">Casa de Química</h1>
+                        <p class="text-sm">Estação de Tratamento de Água - IFES Vitória</p>
+                    </div>
+                </div>
+                <nav class="flex flex-wrap justify-center gap-4 md:gap-8">
+                    <a href="#processos" class="hover:underline font-medium">Processos</a>
+                    <a href="#produtos" class="hover:underline font-medium">Produtos Químicos</a>
+                    <a href="#normas" class="hover:underline font-medium">Normas</a>
+                    <a href="#seguranca" class="hover:underline font-medium">Segurança</a>
+                    <a href="#contato" class="hover:underline font-medium">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-16 md:py-24 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-20">
+            <div class="absolute top-10 left-1/4 w-16 h-16 bg-white rounded-full opacity-30 floating"></div>
+            <div class="absolute top-1/2 left-1/3 w-24 h-24 bg-white rounded-full opacity-30 floating delay-1"></div>
+            <div class="absolute bottom-20 left-3/4 w-20 h-20 bg-white rounded-full opacity-30 floating delay-2"></div>
+        </div>
+        <div class="container mx-auto px-4 text-center relative">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Processos Químicos no Tratamento de Água</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Conheça os produtos químicos, normas e procedimentos de segurança essenciais para a operação da casa de química em uma ETA</p>
+            <button onclick="scrollToSection('#processos')" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition duration-300 shadow-lg">
+                <i class="fas fa-arrow-down mr-2"></i> Saiba Mais
+            </button>
+        </div>
+    </section>
+
+    <!-- Processos Section -->
+    <section id="processos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">Processos Químicos no Tratamento de Água</h2>
+            
+            <div class="chemical-process relative">
+                <!-- Etapa 1: Coagulação -->
+                <div class="process-step" style="top: 20px; left: 10%;">
+                    <div class="flip-card h-40 w-full">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front bg-blue-50 p-4 flex flex-col items-center justify-center rounded-lg border border-blue-200 shadow">
+                                <i class="fas fa-tint chemical-icon"></i>
+                                <h3 class="font-bold">Coagulação</h3>
+                                <p class="text-sm">Al2(SO4)3</p>
+                            </div>
+                            <div class="flip-card-back bg-blue-100 p-4 flex items-center justify-center text-sm rounded-lg border border-blue-300 shadow">
+                                <p>Adição de coagulante (sulfato de alumínio) para unir partículas suspensas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Etapa 2: Floculação -->
+                <div class="process-step" style="top: 20px; left: 30%;">
+                    <div class="flip-card h-40 w-full">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front bg-blue-50 p-4 flex flex-col items-center justify-center rounded-lg border border-blue-200 shadow">
+                                <i class="fas fa-water chemical-icon"></i>
+                                <h3 class="font-bold">Floculação</h3>
+                                <p class="text-sm">PO₄³⁻</p>
+                            </div>
+                            <div class="flip-card-back bg-blue-100 p-4 flex items-center justify-center text-sm rounded-lg border border-blue-300 shadow">
+                                <p>Aglomerado das partículas em flocos para facilitação da decantação</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Etapa 3: Decantação -->
+                <div class="process-step" style="top: 20px; left: 50%;">
+                    <div class="flip-card h-40 w-full">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front bg-blue-50 p-4 flex flex-col items-center justify-center rounded-lg border border-blue-200 shadow">
+                                <i class="fas fa-layer-group chemical-icon"></i>
+                                <h3 class="font-bold">Decantação</h3>
+                                <p class="text-sm">Sedimento</p>
+                            </div>
+                            <div class="flip-card-back bg-blue-100 p-4 flex items-center justify-center text-sm rounded-lg border border-blue-300 shadow">
+                                <p>Separação dos flocos por gravidade, formando o lodo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Etapa 4: Filtração -->
+                <div class="process-step" style="top: 20px; left: 70%;">
+                    <div class="flip-card h-40 w-full">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front bg-blue-50 p-4 flex flex-col items-center justify-center rounded-lg border border-blue-200 shadow">
+                                <i class="fas fa-filter chemical-icon"></i>
+                                <h3 class="font-bold">Filtração</h3>
+                                <p class="text-sm">Areia/Carvão</p>
+                            </div>
+                            <div class="flip-card-back bg-blue-100 p-4 flex items-center justify-center text-sm rounded-lg border border-blue-300 shadow">
+                                <p>Remoção de partículas menores através de meio poroso</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Etapa 5: Desinfecção -->
+                <div class="process-step" style="top: 220px; left: 40%;">
+                    <div class="flip-card h-40 w-full">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front bg-blue-50 p-4 flex flex-col items-center justify-center rounded-lg border border-blue-200 shadow">
+                                <i class="fas fa-bacteria chemical-icon"></i>
+                                <h3 class="font-bold">Desinfecção</h3>
+                                <p class="text-sm">Cl₂/NaClO</p>
+                            </div>
+                            <div class="flip-card-back bg-blue-100 p-4 flex items-center justify-center text-sm rounded-lg border border-blue-300 shadow">
+                                <p>Eliminação de microrganismos patogênicos com cloro</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Etapa 6: Fluoretação -->
+                <div class="process-step" style="top: 220px; left: 70%;">
+                    <div class="flip-card h-40 w-full">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front bg-blue-50 p-4 flex flex-col items-center justify-center rounded-lg border border-blue-200 shadow">
+                                <i class="fas fa-tooth chemical-icon"></i>
+                                <h3 class="font-bold">Fluoretação</h3>
+                                <p class="text-sm">NaF/H₂SiF₆</p>
+                            </div>
+                            <div class="flip-card-back bg-blue-100 p-4 flex items-center justify-center text-sm rounded-lg border border-blue-300 shadow">
+                                <p>Adição de flúor para prevenção de cáries dentárias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Linhas de conexão -->
+                <svg width="100%" height="100%" class="absolute top-0 left-0 z-0" style="pointer-events: none;">
+                    <line x1="15%" y1="100" x2="25%" y2="100" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5" />
+                    <line x1="35%" y1="100" x2="45%" y2="100" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5" />
+                    <line x1="55%" y1="100" x2="65%" y2="100" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5" />
+                    <line x1="40%" y1="150" x2="40%" y2="220" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5" />
+                    <line x1="70%" y1="150" x2="70%" y2="220" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5" />
+                </svg>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm">
+                    <i class="fas fa-vial text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Dosagem Química</h3>
+                    <p class="text-gray-700">Cálculo preciso e controle rigoroso da dosagem de produtos químicos para garantir eficiência no tratamento e qualidade da água.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm">
+                    <i class="fas fa-exchange-alt text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Controle de pH</h3>
+                    <p class="text-gray-700">Ajuste do pH para valores entre 6,5 e 8,5 utilizando cal (CaO) ou ácido sulfúrico (H₂SO₄) para otimizar os processos de coagulação e desinfecção.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm">
+                    <i class="fas fa-chart-line text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Monitoramento Contínuo</h3>
+                    <p class="text-gray-700">Análises físico-químicas e bacteriológicas realizadas em laboratório para garantir conformidade com a Portaria de Consolidação GM/MS nº 888/2021.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos Químicos Section -->
+    <section id="produtos" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">Produtos Químicos Utilizados</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Coagulante -->
+                <div class="bg-white p-6 rounded-lg border-l-4 border-blue-500 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-tint text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Coagulante</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-3"><span class="font-semibold">Principal produto:</span> Sulfato de Alumínio [Al₂(SO₄)₃]</p>
+                    <p class="text-sm text-gray-600 mb-3"><span class="font-semibold">Dosagem:</span> 20-60 mg/L (varia conforme turbidez)</p>
+                    <p class="text-sm text-gray-600"><span class="font-semibold">Função:</span> Neutraliza cargas das partículas em suspensão.</p>
+                </div>
+                
+                <!-- Cloro -->
+                <div class="bg-white p-6 rounded-lg border-l-4 border-green-500 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-bacteria text-green-600 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Desinfetante</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-3"><span class="font-semibold">Principal produto:</span> Cloro Gasoso (Cl₂) ou Hipoclorito de Sódio (NaClO)</p>
+                    <p class="text-sm text-gray-600 mb-3"><span class="font-semibold">Dosagem:</span> 0,5-2,0 mg/L residual</p>
+                    <p class="text-sm text-gray-600"><span class="font-semibold">Função:</span> Destrói microrganismos patogênicos.</p>
+                </div>
+                
+                <!-- Flúor -->
+                <div class="bg-white p-6 rounded-lg border-l-4 border-yellow-500 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-tooth text-yellow-600 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Fluoretação</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-3"><span class="font-semibold">Principal produto:</span> Ácido Fluossilícico (H₂SiF₆)</p>
+                    <p class="text-sm text-gray-600 mb-3"><span class="font-semibold">Dosagem:</span> 0,6-0,8 mg/L (como F⁻)</p>
+                    <p class="text-sm text-gray-600"><span class="font-semibold">Função:</span> Previne cáries dentárias.</p>
+                </div>
+                
+                <!-- Correção de pH -->
+                <div class="bg-white p-6 rounded-lg border-l-4 border-red-500 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-exchange-alt text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg">Correção de pH</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-3"><span class="font-semibold">Principal produto:</span> Cal Hidratada [Ca(OH)₂]</p>
+                    <p class="text-sm text-gray-600 mb-3"><span class="font-semibold">Dosagem:</span> Varia conforme o pH da água</p>
+                    <p class="text-sm text-gray-600"><span class="font-semibold">Função:</span> Ajusta o pH para faixa ideal (6,5-8,5).</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-blue-50 rounded-lg p-6 border border-blue-200">
+                <h3 class="font-bold text-lg mb-4 text-blue-700"><i class="fas fa-info-circle mr-2"></i>Cuidados no Armazenamento</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-start">
+                        <i class="fas fa-temperature-low text-blue-500 mt-1 mr-3"></i>
+                        <div>
+                            <h4 class="font-semibold">Temperatura Ambiente</h4>
+                            <p class="text-sm text-gray-700">Manter entre 15°C e 30°C, longe de fontes de calor ou frio extremo.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-tint-slash text-blue-500 mt-1 mr-3"></i>
+                        <div>
+                            <h4 class="font-semibold">Umidade Controlada</h4>
+                            <p class="text-sm text-gray-700">Manter produtos em embalagens herméticas para evitar absorção de umidade.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-tablets text-blue-500 mt-1 mr-3"></i>
+                        <div>
+                            <h4 class="font-semibold">Compatibilidade</h4>
+                            <p class="text-sm text-gray-700">Armazenar produtos incompatíveis separadamente (ex: ácidos e bases).</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-box text-blue-500 mt-1 mr-3"></i>
+                        <div>
+                            <h4 class="font-semibold">Rotulagem</h4>
+                            <p class="text-sm text-gray-700">Manter rótulos originais com FISPQ sempre legíveis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Normas Section -->
+    <section id="normas" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">Normas e Regulamentações</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500 shadow-sm">
+                    <h3 class="font-bold text-lg mb-4 flex items-center">
+                        <i class="fas fa-book mr-3 text-blue-500"></i> Normas Nacionais
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Portaria GM/MS nº 888/2021 - Padrão de potabilidade da água</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>NBR 12216 - Projeto de estação de tratamento de água</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>ABNT NBR 14912 - Cal hidratada para tratamento de água</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>NR 25 - Resíduos industriais (lodo da ETA)</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-purple-500 shadow-sm">
+                    <h3 class="font-bold text-lg mb-4 flex items-center">
+                        <i class="fas fa-globe-americas mr-3 text-purple-500"></i> Referências Internacionais
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Directiva 98/83/EC - Padrões da UE para água potável</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>EPA 816-F-09-0004 - Padrões da EPA (EUA)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>WHO Guidelines for Drinking-water Quality</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>ISO 15839 - Monitoramento online de água</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                <h3 class="font-bold text-lg mb-4 text-blue-700"><i class="fas fa-list-check mr-2"></i>Parâmetros de Qualidade da Água</h3>
+                
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white rounded-lg overflow-hidden">
+                        <thead class="bg-blue-600 text-white">
+                            <tr>
+                                <th class="py-3 px-4 text-left">Parâmetro</th>
+                                <th class="py-3 px-4 text-left">Valor Máximo Permitido</th>
+                                <th class="py-3 px-4 text-left">Método de Análise</th>
+                                <th class="py-3 px-4 text-left">Frequência</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700">
+                            <tr class="border-b border-gray-200 hover:bg-gray-100">
+                                <td class="py-3 px-4">Turbidez</td>
+                                <td class="py-3 px-4">5,0 uT</td>
+                                <td class="py-3 px-4">Nephelometria</td>
+                                <td class="py-3 px-4">Contínuo</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-100">
+                                <td class="py-3 px-4">Cloro Residual</td>
+                                <td class="py-3 px-4">0,2 - 2,0 mg/L</td>
+                                <td class="py-3 px-4">DPD colorimétrico</td>
+                                <td class="py-3 px-4">Cada 2h</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-100">
+                                <td class="py-3 px-4">pH</td>
+                                <td class="py-3 px-4">6,0 - 9,5</td>
+                                <td class="py-3 px-4">Eletrométrico</td>
+                                <td class="py-3 px-4">Cada 2h</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-100">
+                                <td class="py-3 px-4">Flúor</td>
+                                <td class="py-3 px-4">0,6 - 0,8 mg/L</td>
+                                <td class="py-3 px-4">Eletrodo específico</td>
+                                <td class="py-3 px-4">Diário</td>
+                            </tr>
+                            <tr class="hover:bg-gray-100">
+                                <td class="py-3 px-4">Alumínio</td>
+                                <td class="py-3 px-4">0,2 mg/L</td>
+                                <td class="py-3 px-4">Absorção atômica</td>
+                                <td class="py-3 px-4">Semanal</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Segurança Section -->
+    <section id="seguranca" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">Segurança na Casa de Química</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div>
+                    <h3 class="font-bold text-xl mb-4 text-red-600 flex items-center">
+                        <i class="fas fa-exclamation-triangle mr-3"></i> Equipamentos de Proteção Individual (EPI)
+                    </h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex items-center">
+                            <i class="fas fa-hard-hat text-2xl text-yellow-600 mr-4"></i>
+                            <span>Capacete</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex items-center">
+                            <i class="fas fa-glasses text-2xl text-blue-600 mr-4"></i>
+                            <span>Óculos de proteção</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex items-center">
+                            <i class="fas fa-mask text-2xl text-gray-700 mr-4"></i>
+                            <span>Respirador</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex items-center">
+                            <i class="fas fa-tshirt text-2xl text-green-600 mr-4"></i>
+                            <span>Jaleco resistente</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex items-center">
+                            <i class="fas fa-medal text-2xl text-red-600 mr-4"></i>
+                            <span>Luva química</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex items-center">
+                            <i class="fas fa-socks text-2xl text-purple-600 mr-4"></i>
+                            <span>Botas PVC</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-xl mb-4 text-red-600 flex items-center">
+                        <i class="fas fa-bolt mr-3"></i> Procedimentos de Emergência
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                            <h4 class="font-semibold flex items-center">
+                                <i class="fas fa-skull-crossbones text-red-500 mr-2"></i> Vazamento de Cloro
+                            </h4>
+                            <ol class="list-decimal list-inside text-sm mt-2 space-y-1">
+                                <li>Ativar alarme de emergência</li>
+                                <li>Usar kit de neutralização de cloro (solução de sulfito de sódio)</li>
+                                <li>Isolar área e ventilar naturalmente</li>
+                                <li>Notificar brigada de incêndio e SAMU</li>
+                            </ol>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                            <h4 class="font-semibold flex items-center">
+                                <i class="fas fa-fire-extinguisher text-orange-500 mr-2"></i> Produto Inflamável
+                            </h4>
+                            <ol class="list-decimal list-inside text-sm mt-2 space-y-1">
+                                <li>Cortar fontes de ignição</li>
+                                <li>Usar extintor classe B (CO₂ ou pó químico)</li>
+                                <li>Não usar água em produtos reativos</li>
+                                <li>Evacuar área caso necessário</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-red-50 rounded-lg p-6 border border-red-200">
+                <h3 class="font-bold text-lg mb-4 text-red-700"><i class="fas fa-ban mr-2"></i> Proibições Importantes</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="flex items-start">
+                        <i class="fas fa-smoking-ban text-red-500 mt-1 mr-3"></i>
+                        <div>
+                            <h4 class="font-semibold">Tabaco e Chamas</h4>
+                            <p class="text-sm text-gray-700">Proibido fumar ou acender chamas próximas aos produtos químicos.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-utensils text-red-500 mt-1 mr-3"></i>
+                        <div>
+                            <h4 class="font-semibold">Alimentos/Bebidas</h4>
+                            <p class="text-sm text-gray-700">Proibido consumir alimentos ou bebidas na casa de química.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-flask text-red-500 mt-1 mr-3"></i>
+                        <div>
+                            <h4 class="font-semibold">Misturas não-autorizadas</h4>
+                            <p class="text-sm text-gray-700">Proibido fazer misturas sem conhecimento prévio das reações químicas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-16 bg-blue-700 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Contato</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div>
+                    <h3 class="font-bold text-xl mb-6 flex items-center">
+                        <i class="fas fa-map-marker-alt mr-3 text-blue-300"></i> Instituto Federal do Espírito Santo - Campus Vitória
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-road mt-1 mr-3 text-blue-300"></i>
+                            <div>
+                                <p class="font-semibold">Endereço:</p>
+                                <p>Avenida Vitória, 1729 - Jucutuquara</p>
+                                <p>Vitória - ES, 29040-780</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-blue-300"></i>
+                            <div>
+                                <p class="font-semibold">Telefone:</p>
+                                <p>(27) 3331-2100</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-blue-300"></i>
+                            <div>
+                                <p class="font-semibold">E-mail:</p>
+                                <p>contato@ifes.edu.br</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-globe mt-1 mr-3 text-blue-300"></i>
+                            <div>
+                                <p class="font-semibold">Site:</p>
+                                <a href="https://www.ifes.edu.br" class="underline hover:text-blue-200">www.ifes.edu.br</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg p-6 text-gray-800 shadow-lg">
+                    <h3 class="font-bold text-xl mb-4 text-blue-700">Formulário de Contato</h3>
+                    <form onsubmit="event.preventDefault(); submitForm();" id="contactForm">
+                        <div class="mb-4">
+                            <label for="name" class="block text-sm font-medium mb-1">Nome *</label>
+                            <input type="text" id="name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-sm font-medium mb-1">E-mail *</label>
+                            <input type="email" id="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="subject" class="block text-sm font-medium mb-1">Assunto</label>
+                            <select id="subject" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>Informações sobre processos</option>
+                                <option>Normas e regulamentações</option>
+                                <option>Segurança química</option>
+                                <option>Outros</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-sm font-medium mb-1">Mensagem *</label>
+                            <textarea id="message" rows="4" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300 font-medium">
+                            <i class="fas fa-paper-plane mr-2"></i> Enviar Mensagem
+                        </button>
+                    </form>
+                    <div id="formSuccess" class="hidden mt-4 p-3 bg-green-100 text-green-700 rounded-md text-sm"></div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-blue-800 rounded-lg p-6 text-center max-w-4xl mx-auto">
+                <h3 class="font-bold text-lg mb-3">Visite Nossas Instalações</h3>
+                <p class="mb-4">Agende uma visita técnica para conhecer nossa casa de química e entender os processos de tratamento de água na prática.</p>
+                <button onclick="window.open('https://www.ifes.edu.br', '_blank')" class="bg-white text-blue-700 px-6 py-2 rounded-md font-medium hover:bg-gray-100 transition duration-300">
+                    <i class="fas fa-calendar-alt mr-2"></i> Agendar Visita
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0 text-center md:text-left">
+                    <h4 class="text-white font-bold mb-2">Casa de Química - ETA</h4>
+                    <p class="text-sm">Instituto Federal do Espírito Santo - Campus Vitória</p>
+                    <p class="text-sm">Av. Vitória, 1729 - Jucutuquara, Vitória/ES</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition duration-300">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition duration-300">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                    <a href="https://www.ifes.edu.br" class="hover:text-white transition duration-300">
+                        <i class="fas fa-globe text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm">
+                <p>© 2023 Instituto Federal do Espírito Santo. Todos os direitos reservados.</p>
+                <p class="mt-2">Desenvolvido para fins educacionais - Curso de Engenharia Ambiental</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.querySelector(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        function submitForm() {
+            // Simulação de envio do formulário
+            const name = document.getElementById('name').value;
+            const formSuccess = document.getElementById('formSuccess');
+            
+            formSuccess.classList.remove('hidden');
+            formSuccess.innerHTML = `
+                <i class="fas fa-check-circle mr-2"></i>
+                Obrigado, ${name}! Sua mensagem foi enviada com sucesso. Entraremos em contato em breve.
+            `;
+            
+            document.getElementById('contactForm').reset();
+            
+            // Scroll para a mensagem de sucesso
+            setTimeout(() => {
+                formSuccess.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }, 300);
+        }
+        
+        // Animar os passos do processo químico ao carregar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            const steps = document.querySelectorAll('.process-step');
+            
+            steps.forEach((step, index) => {
+                setTimeout(() => {
+                    step.style.transition = 'all 0.5s ease';
+                    step.style.opacity = '1';
+                }, 200 * index);
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Eduuuuuplan/casa-de-qu-mica" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
